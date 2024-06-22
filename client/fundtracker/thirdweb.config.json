@@ -1,0 +1,360 @@
+{
+    "contracts": [
+      {
+        "name": "GovernmentFundTracking",
+        "address": "0xBCAa2F530c6B9E8E9d1164E0f48Fa04fb9607aFf",
+        "abi": [
+            {
+                "inputs": [],
+                "stateMutability": "nonpayable",
+                "type": "constructor"
+              },
+              {
+                "anonymous": false,
+                "inputs": [
+                  {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "proposalId",
+                    "type": "uint256"
+                  },
+                  {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountAllocated",
+                    "type": "uint256"
+                  }
+                ],
+                "name": "FundsAllocated",
+                "type": "event"
+              },
+              {
+                "anonymous": false,
+                "inputs": [
+                  {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "projectId",
+                    "type": "uint256"
+                  },
+                  {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  }
+                ],
+                "name": "ProjectInitiated",
+                "type": "event"
+              },
+              {
+                "anonymous": false,
+                "inputs": [
+                  {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "proposalId",
+                    "type": "uint256"
+                  },
+                  {
+                    "indexed": false,
+                    "internalType": "enum GovernmentFundTracking.ProposalStatus",
+                    "name": "status",
+                    "type": "uint8"
+                  }
+                ],
+                "name": "ProposalReviewed",
+                "type": "event"
+              },
+              {
+                "anonymous": false,
+                "inputs": [
+                  {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "proposalId",
+                    "type": "uint256"
+                  },
+                  {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "projectId",
+                    "type": "uint256"
+                  },
+                  {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "implementingAgency",
+                    "type": "address"
+                  },
+                  {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountRequested",
+                    "type": "uint256"
+                  }
+                ],
+                "name": "ProposalSubmitted",
+                "type": "event"
+              },
+              {
+                "inputs": [
+                  {
+                    "internalType": "uint256",
+                    "name": "_proposalId",
+                    "type": "uint256"
+                  }
+                ],
+                "name": "allocateFunds",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+              },
+              {
+                "inputs": [],
+                "name": "auditor",
+                "outputs": [
+                  {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                  }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+              },
+              {
+                "inputs": [],
+                "name": "governmentAgency",
+                "outputs": [
+                  {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                  }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+              },
+              {
+                "inputs": [
+                  {
+                    "internalType": "string",
+                    "name": "_name",
+                    "type": "string"
+                  }
+                ],
+                "name": "initiateProject",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+              },
+              {
+                "inputs": [],
+                "name": "projectCount",
+                "outputs": [
+                  {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                  }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+              },
+              {
+                "inputs": [
+                  {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                  }
+                ],
+                "name": "projects",
+                "outputs": [
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "totalAllocated",
+                    "type": "uint256"
+                  }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+              },
+              {
+                "inputs": [],
+                "name": "proposalCount",
+                "outputs": [
+                  {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                  }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+              },
+              {
+                "inputs": [
+                  {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                  }
+                ],
+                "name": "proposals",
+                "outputs": [
+                  {
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "address payable",
+                    "name": "implementingAgency",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "amountRequested",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "enum GovernmentFundTracking.ProposalStatus",
+                    "name": "status",
+                    "type": "uint8"
+                  }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+              },
+              {
+                "inputs": [
+                  {
+                    "internalType": "uint256",
+                    "name": "_proposalId",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "enum GovernmentFundTracking.ProposalStatus",
+                    "name": "_status",
+                    "type": "uint8"
+                  }
+                ],
+                "name": "reviewProposal",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+              },
+              {
+                "inputs": [
+                  {
+                    "internalType": "address",
+                    "name": "_auditor",
+                    "type": "address"
+                  }
+                ],
+                "name": "setAuditor",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+              },
+              {
+                "inputs": [
+                  {
+                    "internalType": "uint256",
+                    "name": "_projectId",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "_amountRequested",
+                    "type": "uint256"
+                  }
+                ],
+                "name": "submitProposal",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+              },
+              {
+                "inputs": [
+                  {
+                    "internalType": "uint256",
+                    "name": "_proposalId",
+                    "type": "uint256"
+                  }
+                ],
+                "name": "viewProposal",
+                "outputs": [
+                  {
+                    "components": [
+                      {
+                        "internalType": "uint256",
+                        "name": "id",
+                        "type": "uint256"
+                      },
+                      {
+                        "internalType": "address payable",
+                        "name": "implementingAgency",
+                        "type": "address"
+                      },
+                      {
+                        "internalType": "uint256",
+                        "name": "amountRequested",
+                        "type": "uint256"
+                      },
+                      {
+                        "internalType": "enum GovernmentFundTracking.ProposalStatus",
+                        "name": "status",
+                        "type": "uint8"
+                      }
+                    ],
+                    "internalType": "struct GovernmentFundTracking.Proposal",
+                    "name": "",
+                    "type": "tuple"
+                  }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+              },
+              {
+                "inputs": [
+                  {
+                    "internalType": "uint256",
+                    "name": "_projectId",
+                    "type": "uint256"
+                  }
+                ],
+                "name": "viewTransactionRecords",
+                "outputs": [
+                  {
+                    "components": [
+                      {
+                        "internalType": "string",
+                        "name": "name",
+                        "type": "string"
+                      },
+                      {
+                        "internalType": "uint256",
+                        "name": "totalAllocated",
+                        "type": "uint256"
+                      }
+                    ],
+                    "internalType": "struct GovernmentFundTracking.Project",
+                    "name": "",
+                    "type": "tuple"
+                  }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ]
+      }
+    ]
+}
